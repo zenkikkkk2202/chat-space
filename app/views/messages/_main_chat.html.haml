@@ -20,12 +20,12 @@
       this is first message
   
     .chat_main__form
-      = form_for :search, :url => root_path, :html => {:method => :get} do |f|
-        = f.text_field :message, placeholder: "type a message", :class => "chat_main__form__blank"
+      = form_for :search, url: root_path, html:  {method: :get} do |f|
+        = f.text_field :message, placeholder: "type a message", class: "chat_main__form__blank"
         
         %label{:class => "chat_main__form__label"}
-          = icon('fas', 'image', :class => "chat_main__form__icon")
-          %input{type: "file", :class => "chat_main__form__file"}
+          = icon('fas', 'image', class: "chat_main__form__icon")
+          %input{type: "file", class: "chat_main__form__file"}
 
-        = f.submit "Send", :class => "chat_main__form--submitbtn"
+        = f.submit "Send", class: "chat_main__form--submitbtn"
         
