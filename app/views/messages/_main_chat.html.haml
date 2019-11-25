@@ -1,0 +1,31 @@
+
+.main_chat
+  .chat_header
+    .chat_header__text
+      .chat_header__text--title
+        group name
+      .chat_header__text--member
+        Member
+    .chat_header__btn
+      = link_to "#", class: "chat_header__btn--edit" do
+        Edit
+
+  .chat_main
+    .chat_main__info
+      .chat_main__info--name
+        Name
+      .chat_main__info--date
+        2019/10/08/19:14:39
+    .chat_main__message
+      this is first message
+  
+    .chat_main__form
+      = form_for :search, url: root_path, html:  {method: :get} do |f|
+        = f.text_field :message, placeholder: "type a message", class: "chat_main__form__blank"
+        
+        %label{:class => "chat_main__form__label"}
+          = icon('fas', 'image', class: "chat_main__form__icon")
+          %input{type: "file", class: "chat_main__form__file"}
+
+        = f.submit "Send", class: "chat_main__form--submitbtn"
+        

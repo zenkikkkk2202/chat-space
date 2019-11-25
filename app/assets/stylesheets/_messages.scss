@@ -1,0 +1,161 @@
+.wrapper{
+  display: flex;
+}
+
+
+.header{
+  background-color: #253141;
+  width: 260px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  height: 100px;
+ 
+
+  &__name {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  &__icon {
+    margin: 0 0 0 auto;
+    
+    &--white{
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
+.contents{
+  background-color: #2f3e51;
+  width: 260px;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: calc(100vh - 100px);
+  &__title{
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffff;
+    padding-top: 20px;
+    padding-bottom: 5px;
+  }
+  &__message{
+    font-size: 11px;
+    font-weight: bold;
+    color: #ffff;
+    padding-bottom: 40px;
+  }
+}
+
+
+
+.main_chat{
+  width: calc(100vw - 300px);
+  
+}
+
+.chat_header{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eeeeee; 
+  height: 99px;
+  &__text{
+    padding-left: 40px;
+    &--title{
+    font-size: 20px;
+    color: #333333;
+    padding-top: 35px;}
+    &--member{
+    font-size: 12px;
+    color: #999999;
+    padding-top: 15px;}
+  }
+  &__btn{
+    border: 1px solid #38aef0;
+    margin-right: 40px;
+    margin-top: 28px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 6px;
+    padding-bottom: 10px;
+    text-align: center;
+    height: 20px;
+    
+    &--edit{
+      text-decoration: none;
+      color: #38aef0;
+      
+    }
+  }
+}
+
+.chat_main{
+  height: calc(100vh - 100px);
+  background-color: #fafafa;
+  
+  &__info{
+    padding-top: 46px;
+    display: flex;
+    padding-left: 40px;
+    &--name{
+      font-size: 16px;
+      font-weight: bold;
+      color: #434A54;
+    }
+    &--date{
+      font-size: 12px;
+      color: #999999;
+      padding-left: 10px;
+    }
+    }
+  &__message{
+    padding-left: 40px;
+    font-size: 14px;
+    color: #434A54;
+    padding-top: 10px;
+  }
+
+  &__form{
+    bottom: 0;
+    position: absolute;
+    background-color: #ddd;
+    width: calc(100% - 340px);
+    display: flex;
+    height: 90px;
+    align-items: center;
+    padding-left: 40px;
+    
+  
+    &__blank{
+      position: relative;
+      height: 50px;
+      padding-left: 10px;
+      width: 930px;
+    }
+
+    &__label{
+      position: absolute;
+      right: 170px;
+      top: 30px;
+      font-size: 20px;
+    }
+  
+   
+    &__file{
+      display: none; 
+    }
+    &--submitbtn{
+      width: 100px;
+      height: 50px;
+      padding:0 30px;
+      background-color: #38aef0;
+      color: white;
+      margin-left: 15px;
+    }
+  }
+  }
