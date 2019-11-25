@@ -1,11 +1,11 @@
 .side_bar
   .header 
     .header__name
-      Name
-    .header__icon
+      = current_user.name
+    .header__icon 
       = link_to "#", class: "header__icon--white" do
         = icon("fas", "edit")
-      = link_to "#", class: "header__icon--white" do
+      = link_to edit_user_path(current_user), class: "header__icon--white" do
         = icon("fas", "cog")
 
   .contents
