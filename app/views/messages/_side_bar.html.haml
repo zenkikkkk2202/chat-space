@@ -3,17 +3,17 @@
     .header__name
       = current_user.name
     .header__icon 
-      = link_to "#", class: "header__icon--white" do
+      = link_to new_group_path, class: "header__icon--white" do
         = icon("fas", "edit")
       = link_to edit_user_path(current_user), class: "header__icon--white" do
         = icon("fas", "cog")
 
-  .contents
-    .contents__title
-      test1
-    .contents__message
-      まだメッセージはありません
-    .contents__title
-      test2
-    .contents__message
-      まだメッセージはありません
+  .groups
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#', class: "group__btn" do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。
+  
