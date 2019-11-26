@@ -32,26 +32,35 @@
   }
 }
 
-.contents{
+.groups{
   background-color: #2f3e51;
   width: 260px;
   padding-left: 20px;
   padding-right: 20px;
   height: calc(100vh - 100px);
-  &__title{
+}
+  
+.group{
+  
+  &__name{
     font-size: 15px;
     font-weight: bold;
     color: #ffff;
     padding-top: 20px;
     padding-bottom: 5px;
   }
+  &__btn{
+    text-decoration: none;
+  }
   &__message{
     font-size: 11px;
     font-weight: bold;
     color: #ffff;
     padding-bottom: 40px;
+
   }
 }
+
 
 
 
