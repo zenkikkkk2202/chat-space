@@ -22,7 +22,7 @@
         
         %label{:class => "chat_main__form__label"}
           = icon('fas', 'image', class: "chat_main__form__icon")
-          %input{type: "file", class: "chat_main__form__file"}
+          = f.file_field :image, class: 'chat_main__form__file'
 
         = f.submit "Send", class: "chat_main__form--submitbtn"
         

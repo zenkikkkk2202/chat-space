@@ -3,6 +3,7 @@
 }
 
 
+
 .header{
   background-color: #253141;
   width: 260px;
@@ -141,7 +142,7 @@
     height: 90px;
     align-items: center;
     padding-left: 40px;
-    
+    position: fixed;
   
     &__blank{
       position: relative;
