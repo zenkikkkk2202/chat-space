@@ -14,15 +14,16 @@
         Edit
 
   .chat_main
-    = render @messages
+    %ul
+      %li.chat_list=render @messages
 
-    .chat_main__form
-      = form_for [@group, @message] do |f|
-        = f.text_field :content, placeholder: "type a message", class: "chat_main__form__blank"
+  .chat_main__form
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, placeholder: "type a message", class: "chat_main__form__blank"
         
-        %label{:class => "chat_main__form__label"}
-          = icon('fas', 'image', class: "chat_main__form__icon")
-          = f.file_field :image, class: 'chat_main__form__file'
+      %label{:class => "chat_main__form__label"}
+        = icon('fas', 'image', class: "chat_main__form__icon")
+        = f.file_field :image, class: 'chat_main__form__file'
 
-        = f.submit "Send", class: "chat_main__form--submitbtn"
+      = f.submit "Send", class: "chat_main__form--submitbtn"
         
