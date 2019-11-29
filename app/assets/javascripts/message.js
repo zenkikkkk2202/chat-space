@@ -2,7 +2,7 @@ $(function(){
   
   
   function buildHTML(message){
-    if (message.image.url) {
+    if (message.image) {
       var html = `
                     <div class="chat_main__info">
                       <p class="chat_main__info--name">
