@@ -2,16 +2,17 @@ $(function(){
   
   
   function buildHTML(message){
-    if (message.image) {
+    var info =  `<div class="chat_main__info">
+                    <p class="chat_main__info--name">
+                      ${message.user_name}
+                    </p>
+                    <p class="chat_main__info--date">
+                      ${message.created_at}
+                    </p>
+                  </div>`
+    if (message.image.url) {
       var html = `
-                    <div class="chat_main__info">
-                      <p class="chat_main__info--name">
-                        ${message.user_name}
-                      </p>
-                      <p class="chat_main__info--date">
-                        ${message.created_at}
-                      </p>
-                    </div>
+                      ${info}
                       <div class="chat_main__message">
                         <p class="chat_main__message__content">
                           ${message.content}
@@ -19,26 +20,18 @@ $(function(){
                         <div class="chat_main__message__image">
                           <image src = "${message.image.url}">
                         </div>
-                      </div>
-                    </div>
-                  `           
+                      </div>`
+                            
     } else {
       var html = `
-                    <div class="chat_main__info">
-                      <p class="chat_main__info--name">
-                        ${message.user_name}
-                      </p>
-                      <p class="chat_main__info--date">
-                        ${message.created_at}
-                      </p>
-                    </div>
+                      ${info}
                       <div class="chat_main__message">
                         <p class="chat_main__message__content">
                           ${message.content}
                         </p>
-                      </div>
-                    </div>
-                  `
+                      </div>`
+                    
+              
     }
     return html
   }
@@ -59,6 +52,7 @@ $(function(){
     .done(function (message){
      var html = buildHTML(message);
      $(".chat_list").append(html);
+     $('.chat_main__form__blank').val('');
      $('.chat_main').animate({ scrollTop: $('.chat_main')[0].scrollHeight});
      $('.chat_main__form--submitbtn').prop('disabled', false)
     })
