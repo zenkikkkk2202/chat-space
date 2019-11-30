@@ -2,37 +2,26 @@ $(function(){
   
   
   function buildHTML(message){
-    var info =  `<div class="chat_main__info">
-                    <p class="chat_main__info--name">
-                      ${message.user_name}
-                    </p>
-                    <p class="chat_main__info--date">
-                      ${message.created_at}
-                    </p>
-                  </div>`
-    if (message.image.url) {
-      var html = `
-                      ${info}
+    var content = message.content ? `${message.content}` : "";
+    var img = message.image.url ? `<img src= ${message.image.url}>` : "";
+    var html = `
+                      <div class="chat_main__info">
+                        <p class="chat_main__info--name">
+                          ${message.user_name}
+                        </p>
+                        <p class="chat_main__info--date">
+                          ${message.created_at}
+                        </p>
+                      </div>
                       <div class="chat_main__message">
                         <p class="chat_main__message__content">
-                          ${message.content}
+                          ${content}
                         </p>
                         <div class="chat_main__message__image">
-                          <image src = "${message.image.url}">
+                          ${img}
                         </div>
                       </div>`
-                            
-    } else {
-      var html = `
-                      ${info}
-                      <div class="chat_main__message">
-                        <p class="chat_main__message__content">
-                          ${message.content}
-                        </p>
-                      </div>`
-                    
-              
-    }
+                         
     return html
   }
 
