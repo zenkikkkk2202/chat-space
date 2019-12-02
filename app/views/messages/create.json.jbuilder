@@ -8,4 +8,3 @@ json.user_name @message.user.name
 json.created_at datetime.to_s(:datetime)
 
 
-
