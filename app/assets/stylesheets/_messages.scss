@@ -1,5 +1,6 @@
 .wrapper{
   display: flex;
+  box-sizing: border-box;
 }
 
 
@@ -34,6 +35,7 @@
 }
 
 .groups{
+  overflow: scroll;
   background-color: #2f3e51;
   width: 260px;
   padding-left: 20px;
@@ -42,7 +44,7 @@
 }
   
 .group{
-  
+  box-sizing: border-box;
   &__name{
     font-size: 15px;
     font-weight: bold;
@@ -67,7 +69,7 @@
 
 .main_chat{
   width: calc(100vw - 300px);
-  
+  position: relative;
 }
 
 .chat_header{
@@ -132,43 +134,43 @@
     color: #434A54;
     padding-top: 10px;
   }
+}
 
-  &__form{
-    bottom: 0;
+.chat_main__form{
+  bottom: 0;
+  position: absolute;
+  background-color: #ddd;
+  width: calc(100% - 340px);
+  display: flex;
+  height: 90px;
+  align-items: center;
+  padding-left: 40px;
+  position: fixed;
+
+  &__blank{
+    position: relative;
+    height: 50px;
+    padding-left: 10px;
+    width: 930px;
+  }
+
+  &__label{
     position: absolute;
-    background-color: #ddd;
-    width: calc(100% - 340px);
-    display: flex;
-    height: 90px;
-    align-items: center;
-    padding-left: 40px;
-    position: fixed;
-  
-    &__blank{
-      position: relative;
-      height: 50px;
-      padding-left: 10px;
-      width: 930px;
-    }
+    right: 170px;
+    top: 30px;
+    font-size: 20px;
+  }
 
-    &__label{
-      position: absolute;
-      right: 170px;
-      top: 30px;
-      font-size: 20px;
-    }
-  
-   
-    &__file{
-      display: none; 
-    }
-    &--submitbtn{
-      width: 100px;
-      height: 50px;
-      padding:0 30px;
-      background-color: #38aef0;
-      color: white;
-      margin-left: 15px;
-    }
+ 
+  &__file{
+    display: none; 
   }
+  &--submitbtn{
+    width: 100px;
+    height: 50px;
+    padding:0 30px;
+    background-color: #38aef0;
+    color: white;
+    margin-left: 15px;
   }
+}
