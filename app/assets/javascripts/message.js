@@ -65,7 +65,6 @@ $(function(){
         });
         $(".chat_list").append(insertHTML);
         $('.chat_main').animate({ scrollTop: $('.chat_main')[0].scrollHeight});
-        console.log("ok")
       })
       .fail(function(){
         console.log("error");
