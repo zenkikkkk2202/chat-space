@@ -49,8 +49,9 @@ $(function(){
       alert("メッセージ送信に失敗しました");
     });
   });
-  if (window.location.href.match(/\/groups\/\d+\/messages/)){
+  
     var reloadMessages = function() {
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
       var last_message_id = $(".chat_message").last().data("id");
       $.ajax({
         url: "api/messages",
@@ -63,8 +64,10 @@ $(function(){
         $.each(messages, function(i,message){
           insertHTML += buildHTML(message)
         });
+        if (messages.length !=0 ){
         $(".chat_list").append(insertHTML);
         $('.chat_main').animate({ scrollTop: $('.chat_main')[0].scrollHeight});
+        }
       })
       .fail(function(){
         alert("error");
