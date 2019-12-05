@@ -64,7 +64,6 @@ $(function(){
         $.each(messages, function(i,message){
           insertHTML += buildHTML(message)
         });
-        
         if (messages.length !=0 ){
         $(".chat_list").append(insertHTML);
         $('.chat_main').animate({ scrollTop: $('.chat_main')[0].scrollHeight});
@@ -73,7 +72,7 @@ $(function(){
       .fail(function(){
         alert("error");
       });
-    };
+    }
     }
   setInterval(reloadMessages, 7000);
 });
